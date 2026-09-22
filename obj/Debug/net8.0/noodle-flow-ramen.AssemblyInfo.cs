@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("noodle-flow-ramen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd3b8e1c3ae18700802a76ed8d8edec0453b64c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29f54e234a068a4309133fbd80ee8b071f77ab12")]
 [assembly: System.Reflection.AssemblyProductAttribute("noodle-flow-ramen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("noodle-flow-ramen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -17,6 +17,162 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_00.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_00.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_01.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_01.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_02.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_02.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_03.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_03.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_04.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_04.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_05.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_05.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_06.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_06.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_07.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_07.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_08.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_08.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_09.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_09.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_10.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_10.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_11.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_11.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_12.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_12.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_13.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_13.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_14.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_14.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_15.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_15.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_16.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_16.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_17.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_17.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_18.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_18.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_19.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_19.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_20.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_20.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_21.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_21.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_22.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_22.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_23.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_23.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_24.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_24.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_25.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_25.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_26.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_26.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_27.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_27.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_28.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_28.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_29.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_29.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_30.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_30.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_31.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_31.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_32.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_32.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_33.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_33.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_34.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_34.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_35.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_35.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_36.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_36.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_37.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_37.png"
+    },
+    {
+      "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/images/ramen-frames/frame_38.png",
+      "PackagePath": "staticwebassets/images/ramen-frames/frame_38.png"
+    },
+    {
       "Id": "/Users/scl076pcad005/Desktop/Proyectos /noodle-flow-ramen/noodle-flow-ramen/wwwroot/js/cart.js",
       "PackagePath": "staticwebassets/js/cart.js"
     },
