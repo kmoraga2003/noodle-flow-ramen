@@ -1,0 +1,111 @@
+@model IEnumerable<noodle_flow_ramen.Models.MenuItem>
+@{
+    ViewData["Title"] = "Menú de Ramen y Catálogo";
+    var categories = ViewBag.Categories as IEnumerable<string> ?? new List<string>();
+    var currentCategory = ViewBag.CurrentCategory as string ?? "Todos";
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <span class="badge bg-warning text-dark font-weight-bold px-3 py-2 rounded-pill mb-2">CATÁLOGO COMPLETO</span>
+        <h1 class="display-5 font-weight-bold text-white">Nuestro Menú de Ramen</h1>
+        <p class="text-muted mx-auto" style="max-width: 600px;">
+            Descubre nuestra variedad de caldos artesanales Tonkotsu, Miso y Shoyu, además de deliciosas entradas caseras y bebidas japonesas.
+        </p>
+
+        <!-- Filtro por Categorías -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+            @foreach (var cat in categories)
+            {
+                <a asp-controller="Menu" asp-action="Index" asp-route-category="@cat"
+                   class="btn category-filter-btn @(currentCategory.Equals(cat, StringComparison.OrdinalIgnoreCase) ? "active" : "")">
+                    @if (cat == "Tonkotsu") { <span>🐖 Tonkotsu</span> }
+                    else if (cat == "Miso") { <span>🍜 Miso</span> }
+                    else if (cat == "Shoyu") { <span>🥢 Shoyu</span> }
+                    else if (cat == "Entradas") { <span>🥟 Entradas</span> }
+                    else if (cat == "Bebidas") { <span>🍵 Bebidas</span> }
+                    else { <span>✨ Todos</span> }
+                </a>
+            }
+        </div>
+    </div>
+
+    <!-- Rejilla de Platillos -->
+    <div class="row g-4">
+        @if (!Model.Any())
+        {
+            <div class="col-12 text-center py-5">
+                <div class="fs-1 text-muted mb-2">🥢</div>
+                <h4 class="text-white">No se encontraron platillos en esta categoría.</h4>
+                <a asp-controller="Menu" asp-action="Index" class="btn btn-ramen-outline mt-3">Ver Todos los Platillos</a>
+            </div>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <div class="ramen-card">
+                        <div class="ramen-card-header">
+                            <span class="fs-1">
+                                @if (item.Category == "Tonkotsu") { @("🍜") }
+                                else if (item.Category == "Miso") { @("🍲") }
+                                else if (item.Category == "Shoyu") { @("🥢") }
+                                else if (item.Category == "Entradas") { @("🥟") }
+                                else { @("🥤") }
+                            </span>
+                            @if (!string.IsNullOrEmpty(item.BadgeText))
+                            {
+                                <span class="ramen-badge">@item.BadgeText</span>
+                            }
+                        </div>
+                        <div class="ramen-card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="card-title text-warning mb-0 font-weight-bold">@item.Name</h4>
+                            </div>
+
+                            <div class="mb-2">
+                                <span class="badge bg-secondary me-1">@item.Category</span>
+                                @if (item.SpicinessLevel > 0)
+                                {
+                                    <span class="badge bg-danger">
+                                        @for (int i = 0; i < item.SpicinessLevel; i++)
+                                        {
+                                            @("🌶️")
+                                        }
+                                    </span>
+                                }
+                                @if (item.IsVegetarian)
+                                {
+                                    <span class="badge bg-success">Vegetariano 🌱</span>
+                                }
+                            </div>
+
+                            <p class="card-text text-muted small flex-grow-1 mb-3">
+                                @item.Description
+                            </p>
+
+                            <div class="mb-3">
+                                <small class="text-warning d-block mb-1 font-weight-bold" style="font-size: 0.75rem;">INGREDIENTES:</small>
+                                @foreach (var ing in item.Ingredients)
+                                {
+                                    <span class="ingredient-pill">@ing</span>
+                                }
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between mt-auto pt-3 border-top border-secondary opacity-75">
+                                <div>
+                                    <span class="small text-muted d-block" style="font-size: 0.75rem;">Precio</span>
+                                    <span class="fs-4 font-weight-bold text-white">$@item.Price.ToString("N0") CLP</span>
+                                </div>
+                                <button type="button" class="btn btn-ramen-gold" onclick="RamenCart.addItem(@item.Id, '@item.Name', @item.Price, '@item.Category')">
+                                    <i class="fa-solid fa-cart-plus me-1"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

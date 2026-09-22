@@ -1,0 +1,47 @@
+@model noodle_flow_ramen.Models.ReservationViewModel
+@{
+    ViewData["Title"] = "Confirmación de Reserva";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="ramen-card p-4 p-md-5 text-center">
+                <div class="display-1 text-warning mb-3">🎉</div>
+                <span class="badge bg-success font-weight-bold px-3 py-2 rounded-pill mb-3">RESERVA CONFIRMADA</span>
+                
+                <h2 class="display-6 font-weight-bold text-white mb-2">¡Te Esperamos en Noodle Flow!</h2>
+                <p class="text-muted mb-4">Hemos guardado tu mesa correctamente. Presenta este código al llegar al restaurante.</p>
+
+                <div class="p-3 mb-4 rounded-3 text-warning font-monospace fs-2 font-weight-bold" style="background-color: var(--ramen-surface); border: 2px dashed var(--ramen-gold);">
+                    @Model.ConfirmationCode
+                </div>
+
+                <div class="text-start bg-dark p-3 rounded-3 mb-4 border border-secondary">
+                    <h6 class="text-warning font-weight-bold mb-3"><i class="fa-solid fa-circle-info me-2"></i> Detalles de la Reserva</h6>
+                    <ul class="list-unstyled small text-light mb-0">
+                        <li class="mb-2"><strong>Nombre:</strong> @Model.FullName</li>
+                        <li class="mb-2"><strong>Correo:</strong> @Model.Email</li>
+                        <li class="mb-2"><strong>Teléfono:</strong> @Model.Phone</li>
+                        <li class="mb-2"><strong>Comensales:</strong> @Model.GuestCount personas</li>
+                        <li class="mb-2"><strong>Fecha:</strong> @Model.ReservationDate.ToString("dd/MM/yyyy")</li>
+                        <li class="mb-2"><strong>Horario:</strong> @Model.ReservationTime hrs</li>
+                        @if (!string.IsNullOrEmpty(Model.SpecialRequests))
+                        {
+                            <li class="mb-2"><strong>Notas:</strong> @Model.SpecialRequests</li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3">
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-ramen-outline">
+                        <i class="fa-solid fa-house me-1"></i> Volver al Inicio
+                    </a>
+                    <a asp-controller="Menu" asp-action="Index" class="btn btn-ramen-gold">
+                        <i class="fa-solid fa-bowl-food me-1"></i> Ver Menú de Platillos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,149 @@
+@model IEnumerable<noodle_flow_ramen.Models.MenuItem>
+@{
+    ViewData["Title"] = "Inicio - El Arte del Ramen Artesanal";
+}
+
+<!-- Hero Section con Canvas 60fps -->
+<section class="hero-section">
+    <!-- Interactive 60fps HTML5 Canvas background -->
+    <canvas id="noodleCanvas"></canvas>
+    
+    <div class="hero-overlay text-center my-4">
+        <span class="badge bg-warning text-dark font-weight-bold px-3 py-2 rounded-pill mb-3 text-uppercase tracking-wider">
+            <i class="fa-solid fa-fire me-1"></i> Experiencia Sensorial 60FPS
+        </span>
+        
+        <h1 class="hero-title">El Arte del Ramen Artesanal</h1>
+        
+        <p class="hero-subtitle">
+            Caldos concentrados cocinados durante 18 horas seguidas, fideos elaborados a mano diariamente y la calidez del auténtico sabor japonés.
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+            <a asp-controller="Menu" asp-action="Index" class="btn btn-ramen-primary btn-lg px-4">
+                <i class="fa-solid fa-bowl-food me-2"></i> Explorar Menú
+            </a>
+            <a asp-controller="Reservation" asp-action="Index" class="btn btn-ramen-gold btn-lg px-4">
+                <i class="fa-solid fa-calendar-days me-2"></i> Reservar Mesa
+            </a>
+        </div>
+        
+        <div class="mt-4 small text-muted">
+            <i class="fa-solid fa-mouse me-1 text-warning"></i> Mueve el ratón o desliza la pantalla para interactuar con los fideos de ramen flotantes
+        </div>
+    </div>
+</section>
+
+<!-- Sección Filosofía & Pilares -->
+<section class="py-5" style="background-color: var(--ramen-surface);">
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <h6 class="text-warning text-uppercase font-weight-bold tracking-widest">Nuestra Filosofía</h6>
+            <h2 class="display-6 font-weight-bold text-white">¿Por Qué Noodle Flow?</h2>
+            <div class="mx-auto" style="width: 60px; height: 3px; background-color: var(--ramen-gold); margin-top: 10px;"></div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="ramen-card p-4 text-center">
+                    <div class="fs-1 text-warning mb-3">🔥</div>
+                    <h4 class="text-white font-weight-bold mb-2">Caldo de 18 Horas</h4>
+                    <p class="text-muted small mb-0">
+                        Extraemos colágeno y sabor profundo hirviendo huesos de cerdo y aves seleccionadas a fuego lento constante durante 18 horas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="ramen-card p-4 text-center">
+                    <div class="fs-1 text-warning mb-3">🌾</div>
+                    <h4 class="text-white font-weight-bold mb-2">Fideos Frescos a Mano</h4>
+                    <p class="text-muted small mb-0">
+                        Amasados con harina de trigo orgánico y Kansui tradicional para lograr la textura elástica perfecta y la absorción ideal del caldo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="ramen-card p-4 text-center">
+                    <div class="fs-1 text-warning mb-3">✨</div>
+                    <h4 class="text-white font-weight-bold mb-2">Umami Balanceado</h4>
+                    <p class="text-muted small mb-0">
+                        Combina tare artesanal de soya añejada o miso de Hokkaido con aceites aromáticos especiados para una explosión de sabor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Destacados / Especialidades del Chef -->
+<section class="py-5">
+    <div class="container py-3">
+        <div class="d-flex flex-wrap align-items-end justify-content-between mb-4">
+            <div>
+                <h6 class="text-warning text-uppercase font-weight-bold tracking-widest">Selección del Chef</h6>
+                <h2 class="display-6 font-weight-bold text-white mb-0">Nuestros Cuencos Estrellas</h2>
+            </div>
+            <a asp-controller="Menu" asp-action="Index" class="btn btn-ramen-outline btn-sm mt-3 mt-md-0">
+                Ver Menú Completo <i class="fa-solid fa-chevron-right ms-1"></i>
+            </a>
+        </div>
+
+        <div class="row g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-3">
+                    <div class="ramen-card">
+                        <div class="ramen-card-header">
+                            <span class="fs-1">🍜</span>
+                            @if (!string.IsNullOrEmpty(item.BadgeText))
+                            {
+                                <span class="ramen-badge">@item.BadgeText</span>
+                            }
+                        </div>
+                        <div class="ramen-card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title text-warning mb-0 font-weight-bold">@item.Name</h5>
+                                <span class="badge bg-secondary">@item.Category</span>
+                            </div>
+                            <p class="card-text text-muted small flex-grow-1 mb-3">
+                                @item.Description
+                            </p>
+                            <div class="mb-3">
+                                @foreach (var ing in item.Ingredients.Take(3))
+                                {
+                                    <span class="ingredient-pill">@ing</span>
+                                }
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mt-auto pt-2 border-top border-secondary opacity-75">
+                                <span class="fs-5 font-weight-bold text-white">$@item.Price.ToString("N0") CLP</span>
+                                <button type="button" class="btn btn-ramen-gold btn-sm" onclick="RamenCart.addItem(@item.Id, '@item.Name', @item.Price, '@item.Category')">
+                                    <i class="fa-solid fa-plus me-1"></i> Pedir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Reservas -->
+<section class="py-5 text-center text-white" style="background: linear-gradient(135deg, #2b1a13 0%, #120e0c 100%); border-top: 1px solid var(--ramen-border);">
+    <div class="container py-4">
+        <h2 class="display-6 font-weight-bold text-warning mb-3">¿Listo para Vivir la Experiencia Ramen?</h2>
+        <p class="lead text-muted mx-auto mb-4" style="max-width: 650px;">
+            Asegura tu mesa en nuestra barra tradicional de madera o en comedor privado para disfrutar de ramen caliente recién preparado.
+        </p>
+        <a asp-controller="Reservation" asp-action="Index" class="btn btn-ramen-primary btn-lg px-5">
+            <i class="fa-solid fa-calendar-check me-2"></i> Reservar tu Mesa Ahora
+        </a>
+    </div>
+</section>
+
+@section Scripts {
+    <!-- 60fps Canvas Animation JS -->
+    <script src="~/js/noodle-canvas.js" asp-append-version="true"></script>
+}

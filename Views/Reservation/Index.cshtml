@@ -1,0 +1,122 @@
+@model noodle_flow_ramen.Models.ReservationViewModel
+@{
+    ViewData["Title"] = "Reservar Mesa";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="ramen-card p-4 p-md-5">
+                <div class="text-center mb-4">
+                    <span class="badge bg-warning text-dark font-weight-bold px-3 py-2 rounded-pill mb-2">RESERVAS ONLINE</span>
+                    <h2 class="display-6 font-weight-bold text-white">Reserva tu Mesa en Noodle Flow</h2>
+                    <p class="text-muted">
+                        Asegura tu lugar para disfrutar de la experiencia del auténtico ramen artesanal en un ambiente cálido.
+                    </p>
+                </div>
+
+                <form asp-controller="Reservation" asp-action="Index" method="post" class="needs-validation">
+                    @Html.AntiForgeryToken()
+
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger rounded-3 mb-4"></div>
+
+                    <div class="row g-3">
+                        <!-- Nombre Completo -->
+                        <div class="col-md-6">
+                            <label asp-for="FullName" class="form-label text-warning font-weight-bold"></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary text-muted"><i class="fa-solid fa-user"></i></span>
+                                <input asp-for="FullName" class="form-control form-control-ramen" placeholder="Ej: Taro Yamada" />
+                            </div>
+                            <span asp-validation-for="FullName" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6">
+                            <label asp-for="Email" class="form-label text-warning font-weight-bold"></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary text-muted"><i class="fa-solid fa-envelope"></i></span>
+                                <input asp-for="Email" type="email" class="form-control form-control-ramen" placeholder="correo@ejemplo.cl" />
+                            </div>
+                            <span asp-validation-for="Email" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="col-md-6">
+                            <label asp-for="Phone" class="form-label text-warning font-weight-bold"></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary text-muted"><i class="fa-solid fa-phone"></i></span>
+                                <input asp-for="Phone" class="form-control form-control-ramen" placeholder="+56 9 1234 5678" />
+                            </div>
+                            <span asp-validation-for="Phone" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Personas -->
+                        <div class="col-md-6">
+                            <label asp-for="GuestCount" class="form-label text-warning font-weight-bold"></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary text-muted"><i class="fa-solid fa-user-group"></i></span>
+                                <select asp-for="GuestCount" class="form-select form-select-ramen">
+                                    <option value="1">1 Persona (Barra Individual)</option>
+                                    <option value="2" selected>2 Personas (Mesa Dúo)</option>
+                                    <option value="3">3 Personas</option>
+                                    <option value="4">4 Personas (Mesa Familiar)</option>
+                                    <option value="5">5 Personas</option>
+                                    <option value="6">6 Personas</option>
+                                    <option value="8">8 Personas (Comedor Privado)</option>
+                                </select>
+                            </div>
+                            <span asp-validation-for="GuestCount" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Fecha -->
+                        <div class="col-md-6">
+                            <label asp-for="ReservationDate" class="form-label text-warning font-weight-bold"></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary text-muted"><i class="fa-solid fa-calendar"></i></span>
+                                <input asp-for="ReservationDate" type="date" class="form-control form-control-ramen" min="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                            </div>
+                            <span asp-validation-for="ReservationDate" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Horario -->
+                        <div class="col-md-6">
+                            <label asp-for="ReservationTime" class="form-label text-warning font-weight-bold"></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary text-muted"><i class="fa-solid fa-clock"></i></span>
+                                <select asp-for="ReservationTime" class="form-select form-select-ramen">
+                                    <option value="12:30">12:30 hrs (Almuerzo)</option>
+                                    <option value="13:30">13:30 hrs (Almuerzo)</option>
+                                    <option value="14:30">14:30 hrs (Almuerzo)</option>
+                                    <option value="19:00">19:00 hrs (Cena)</option>
+                                    <option value="19:30" selected>19:30 hrs (Cena)</option>
+                                    <option value="20:30">20:30 hrs (Cena)</option>
+                                    <option value="21:30">21:30 hrs (Cena)</option>
+                                </select>
+                            </div>
+                            <span asp-validation-for="ReservationTime" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Solicitudes Especiales -->
+                        <div class="col-12">
+                            <label asp-for="SpecialRequests" class="form-label text-warning font-weight-bold"></label>
+                            <textarea asp-for="SpecialRequests" class="form-control form-control-ramen" rows="3" placeholder="Alergias alimentarias, preferencia de silla alta, celebración especial..."></textarea>
+                            <span asp-validation-for="SpecialRequests" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Botón Enviar -->
+                        <div class="col-12 mt-4 text-center">
+                            <button type="submit" class="btn btn-ramen-primary btn-lg px-5">
+                                <i class="fa-solid fa-paper-plane me-2"></i> Confirmar Reserva de Mesa
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
